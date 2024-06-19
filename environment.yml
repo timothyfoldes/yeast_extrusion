@@ -3,7 +3,6 @@ channels:
     - conda-forge
 dependencies:
     - pip
-    - cython
     - python<3.11
     - numpy<1.24
     - scipy>=0.16
@@ -18,5 +17,5 @@ dependencies:
     - notebook
     - pip:
         - git+https://github.com/open2c/polykit.git
-        - cooltools==0.5.4
+        - cooltools
         - git+https://github.com/mtortora/lattice-translocators.git
