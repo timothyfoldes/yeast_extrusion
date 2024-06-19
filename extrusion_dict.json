@@ -1,0 +1,39 @@
+{
+    "CTCF_facestall": {
+        "A": 0.9
+    },
+    "CTCF_backstall": {
+        "A": 0
+    },
+    "CTCF_offtime": {
+        "A": 0.1
+    },
+    "CTCF_lifetime": {
+        "A": 10
+    },
+    "LEF_offtime": {
+        "A": 50
+    },
+    "LEF_lifetime": {
+        "A": 500
+    },
+    "LEF_stalled_lifetime": {
+        "A": 50
+    },
+    "LEF_pause": {
+        "A": 0
+    },
+    "LEF_states": {},
+    "LEF_transition_rates": {},
+    "LEF_separation": 100,
+    "sites_per_monomer": 1,
+    "monomers_per_replica": 1000,
+    "number_of_replica": 1,
+    "steps": 1000,
+    "dummy_steps": 500,
+    "velocity_multiplier": 0.1,
+    "3D_to_1D_steps": 200,
+    "stall_prob_left": 0,
+    "stall_prob_right":0
+
+}
