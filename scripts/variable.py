@@ -1,5 +1,5 @@
 import numpy as np
-gpu_num = 1
+gpu_num = 0
 
 N = 1000
 replicas = np.arange(50)
