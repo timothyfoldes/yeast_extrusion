@@ -17,7 +17,6 @@ for cutoff in cutoffs:
         os.makedirs(f'./data/{directory}/', exist_ok=True)
         filename = f'trajectory_N{var.N}_cuttoff{cutoff}_period{var.period}_probe1{var.probe_position_1}_dist{dist}_{replicate}'
         filepath = f'data/{directory}/{filename}.gsd'
-        # Execute the Python script with the current replicate value
         print(f'Using GPU number: {var.gpu_num}')
         print(f"Running simulation number {replicate} with parameter: cutoff {cutoff} and probe distance {dist}")
 

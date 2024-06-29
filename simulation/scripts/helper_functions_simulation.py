@@ -2,6 +2,7 @@ import hoomd
 import numpy as np
 import codecs
 import os
+import json
 
 def tune_rbuff(sim, nl, steps, buffer_min, buffer_max, Nbins, set_r_buff, set_check_period):
     r_buffs = np.round(np.linspace(buffer_min, buffer_max, Nbins), 3)
@@ -79,3 +80,18 @@ def get_probe_distance(system, probe_position_1, probe_position_2):
     positions = snapshot.particles.position
     return np.linalg.norm(positions[probe_position_1+5] - positions[probe_position_2+5])
 
+def get_box_size(M, N, rho):
+    with open("scripts/force_dict_full.json", 'r') as dict_file:
+        force_dict = json.load(dict_file)
+        bead_radius = force_dict["Non-bonded forces"]["Repulsion"]["Cutoff"]
+    L = ((M * N )/rho)**(1/3)
+    return L
+
+def get_probe_positions(N, probe_dist, probe_mult, Nprobes):
+    """
+    Get the probe positions for the given number of beads and probe distance
+    """
+    probe_postions = []
+    for k in range(Nprobes+1):
+        probe_postions.append(int(k * probe_dist//probe_mult))
+    return np.array(probe_postions)
